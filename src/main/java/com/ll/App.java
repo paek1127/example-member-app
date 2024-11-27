@@ -10,9 +10,25 @@ public class App {
     }
 
     public void run() {
-        System.out.println("== 회원 앱 ==");
+        System.out.println("=== 회원 앱 ===");
 
-        System.out.print("명령) ");
-        String cmd = scanner.nextLine();
+        while (true) {
+            System.out.print("명령) ");
+            String cmd = scanner.nextLine();
+
+            if (cmd.equals("종료")) {
+                break;
+            } else if (cmd.equals("등록")) {
+                actionAdd();
+            }
+        }
+    }
+
+    private void actionAdd() {
+        System.out.print("이름 : ");
+        String name = scanner.nextLine();
+        System.out.print("나이 : ");
+        String age = scanner.nextLine();
     }
 }
+
