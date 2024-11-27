@@ -10,7 +10,7 @@ public class App {
     }
 
     public void run() {
-        System.out.println("=== 회원 앱 ===");
+        System.out.println("== 회원 앱 ==");
 
         System.out.print("명령) ");
         String cmd = scanner.nextLine();
