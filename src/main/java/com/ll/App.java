@@ -29,6 +29,8 @@ public class App {
         String name = scanner.nextLine();
         System.out.print("나이 : ");
         String age = scanner.nextLine();
+
+        System.out.println("1번 회원이 등록되었습니다.");
     }
 }
 
