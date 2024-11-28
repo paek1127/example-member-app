@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 public class App {
     private final Scanner scanner;
+    private int lastId;
+
 
     public App() {
         this.scanner = new Scanner(System.in);
+        this.lastId = 0;
     }
 
     public void run() {
@@ -30,7 +33,9 @@ public class App {
         System.out.print("나이 : ");
         String age = scanner.nextLine();
 
-        System.out.println("1번 회원이 등록되었습니다.");
+        int id = ++lastId;
+
+        System.out.println(id +"번 회원이 등록되었습니다.");
     }
 }
 
