@@ -25,6 +25,7 @@ public class App {
                 actionAdd();
             }
         }
+        scanner.close();
     }
 
     private void actionAdd() {
