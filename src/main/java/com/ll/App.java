@@ -1,15 +1,19 @@
 package com.ll;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     private final Scanner scanner;
     private int lastId;
+    private final List<MemberList> memberLists;
 
 
     public App() {
         this.scanner = new Scanner(System.in);
         this.lastId = 0;
+        this.memberLists = new ArrayList<>();
     }
 
     public void run() {
@@ -23,9 +27,20 @@ public class App {
                 break;
             } else if (cmd.equals("등록")) {
                 actionAdd();
+            } else if (cmd.equals("목록")) {
+                actionList();
             }
         }
         scanner.close();
+    }
+
+    private void actionList() {
+        System.out.println("번호 / 이름 / 나이");
+        System.out.println("===============");
+
+        for (MemberList memberList : memberLists.reversed()) {
+            System.out.println(memberList.getId() + " / " + memberList.getName() + " / " + memberList.getAge());
+        }
     }
 
     private void actionAdd() {
@@ -35,6 +50,9 @@ public class App {
         String age = scanner.nextLine();
 
         int id = ++lastId;
+
+        MemberList memberList = new MemberList(id, name, age);
+        memberLists.add(memberList);
 
         System.out.println(id +"번 회원이 등록되었습니다.");
     }
